@@ -1,0 +1,12 @@
+version: "3.7"
+
+services:
+  app:
+    build: .
+    entrypoint: /bin/bash
+    tty: true
+    environment:
+      - ODBC_CONN_STR=DRIVER={PostgreSQL};DATABASE=pagila;SERVER=db;UID=root;PWD=admin
+
+  db:
+    image: mujz/pagila
